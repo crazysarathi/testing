@@ -55,7 +55,7 @@ function App() {
             color: "white",
           }}
         >
-          Switch {i + 1} : {val ? "ON" : "OFF"}
+          Switcsssh {i + 1} : {val ? "ON" : "OFF"}
         </button>
       ))}
     </div>
