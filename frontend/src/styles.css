@@ -1,0 +1,240 @@
+:root {
+  --bg-ink: #08131f;
+  --bg-panel: rgba(8, 19, 31, 0.78);
+  --line: rgba(255, 255, 255, 0.12);
+  --text-main: #f8fafc;
+  --text-soft: #b7c7d6;
+  --accent: #f59e0b;
+  --accent-strong: #fb7185;
+  --chip: rgba(245, 158, 11, 0.14);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --font-ui: "Bai Jamjuree", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(251, 113, 133, 0.28), transparent 30%),
+    radial-gradient(circle at right, rgba(245, 158, 11, 0.24), transparent 24%),
+    linear-gradient(160deg, #020617 0%, #0f172a 48%, #102033 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.hero-card,
+.results-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  padding: 30px;
+}
+
+.hero-copy h1,
+.results-header h2 {
+  margin: 8px 0 12px;
+  letter-spacing: -0.04em;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 0.95;
+  max-width: 10ch;
+}
+
+.hero-copy p,
+.status-strip p,
+.empty-state,
+.app-tile span {
+  color: var(--text-soft);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: #ffd38a;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.launch-form {
+  margin-top: 28px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.input-row input {
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.input-row input:focus {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12);
+}
+
+.input-row button,
+.app-tile {
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease;
+}
+
+.input-row button {
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #07111f;
+  font-weight: 700;
+}
+
+.input-row button:hover,
+.app-tile:hover {
+  transform: translateY(-1px);
+}
+
+.input-row button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status-strip {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.status-strip p {
+  margin: 8px 0 0;
+}
+
+.status-label {
+  color: #ffd38a;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.results-card {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.results-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.count-badge {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-soft);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  text-align: left;
+}
+
+.app-tile:hover {
+  border-color: rgba(245, 158, 11, 0.34);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.empty-state {
+  margin: 0;
+  padding: 20px 4px 4px;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 24px, 1120px);
+    padding-top: 24px;
+  }
+
+  .hero-card,
+  .results-card {
+    border-radius: 24px;
+  }
+
+  .hero-card,
+  .results-card {
+    padding: 20px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
