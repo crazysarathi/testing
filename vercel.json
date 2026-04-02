@@ -1,12 +1,13 @@
 {
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
+    "experimentalServices": {
+        "frontend": {
+            "entrypoint": "frontend",
+            "routePrefix": "/",
+            "framework": "create-react-app"
+        },
+        "backend": {
+            "entrypoint": "backend",
+            "routePrefix": "/_/backend"
+        }
     }
-  ]
 }
